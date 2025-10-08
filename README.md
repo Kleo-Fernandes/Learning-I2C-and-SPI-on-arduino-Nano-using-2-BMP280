@@ -48,21 +48,28 @@ It is designed for learning and experimenting with communication protocols.
 
 ---
 
+
 ## 📂 Code
 
-### I²C Example (`I2C_BMP280/I2C_BMP280.ino`)
+### 🧭 I²C Example (`I2C_BMP280/I2C_BMP280.ino`)
 ```cpp
 #include <Wire.h>
 #include <Adafruit_BMP280.h>
 
-Adafruit_BMP280 bmp1; // 0x76
-Adafruit_BMP280 bmp2; // 0x77
+Adafruit_BMP280 bmp1; // Address 0x76
+Adafruit_BMP280 bmp2; // Address 0x77
 
 void setup() {
   Serial.begin(9600);
 
-  if (!bmp1.begin(0x76)) { Serial.println("BMP280 #1 not found!"); while (1); }
-  if (!bmp2.begin(0x77)) { Serial.println("BMP280 #2 not found!"); while (1); }
+  if (!bmp1.begin(0x76)) {
+    Serial.println("BMP280 #1 not found!");
+    while (1);
+  }
+  if (!bmp2.begin(0x77)) {
+    Serial.println("BMP280 #2 not found!");
+    while (1);
+  }
 }
 
 void loop() {
@@ -75,26 +82,30 @@ void loop() {
   Serial.println();
   delay(2000);
 }
-
+```
 
 ---
 
-##📂 Code
-
-###SPI Example (`SPI_BMP280/SPI_BMP280.ino`)
+### ⚡ SPI Example (`SPI_BMP280/SPI_BMP280.ino`)
 ```cpp
 #include <SPI.h>
 #include <Adafruit_BMP280.h>
 
-// Hardware SPI, just pass CS pins
+// Hardware SPI, specify only CS pins
 Adafruit_BMP280 bmp1(10); // CS = D10
 Adafruit_BMP280 bmp2(9);  // CS = D9
 
 void setup() {
   Serial.begin(9600);
 
-  if (!bmp1.begin()) { Serial.println("BMP280 #1 not found!"); while (1); }
-  if (!bmp2.begin()) { Serial.println("BMP280 #2 not found!"); while (1); }
+  if (!bmp1.begin()) {
+    Serial.println("BMP280 #1 not found!");
+    while (1);
+  }
+  if (!bmp2.begin()) {
+    Serial.println("BMP280 #2 not found!");
+    while (1);
+  }
 }
 
 void loop() {
@@ -107,4 +118,4 @@ void loop() {
   Serial.println();
   delay(2000);
 }
-
+```
