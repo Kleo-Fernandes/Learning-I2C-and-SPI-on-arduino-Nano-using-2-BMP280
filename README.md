@@ -79,9 +79,9 @@ void loop() {
 
 ---
 
-## 📂 Code
+##📂 Code
 
-### SPI Example (`SPI_BMP280/SPI_BMP280.ino`)
+###SPI Example (`SPI_BMP280/SPI_BMP280.ino`)
 ```cpp
 #include <SPI.h>
 #include <Adafruit_BMP280.h>
